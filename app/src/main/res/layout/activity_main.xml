@@ -39,12 +39,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="83dp"
-        android:layout_marginRight="83dp"
-        android:layout_marginBottom="63dp"
-        android:layout_toStartOf="@+id/parent"
-        android:layout_toLeftOf="@+id/edittext_fristname"
-        android:text="Button" />
+        android:layout_marginEnd="85dp"
+        android:layout_marginRight="85dp"
+        android:layout_marginBottom="61dp"
+        android:layout_toStartOf="@+id/button_show"
+        android:layout_toLeftOf="@+id/button_show"
+        android:text="Save"
+        app:layout_constraintTop_toBottomOf="@id/editText_firstName"/>
 
     <Button
         android:id="@+id/button_show"
@@ -53,13 +54,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="91dp"
-        android:layout_marginRight="91dp"
-        android:layout_marginBottom="62dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="63dp"
+        android:text="Show"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@"
-        android:text="Button" />
+        app:layout_constraintTop_toBottomOf="@id/edittext_lastname" />
 </RelativeLayout>
 
 
