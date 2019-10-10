@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
             if (validation()){
                 val user: User = User()
                 var success: Boolean = false
-                user.Name = editText_Name.text.toString()
-                user.Name = editText_Name.text.toString()
+                user.fristName = editText_firstName.text.toString()
+                user.lastname = edittext_lastName.text.toString()
 
                 success = dbHandler!!.addUser(user)
 
