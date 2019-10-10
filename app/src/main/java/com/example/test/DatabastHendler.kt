@@ -20,6 +20,7 @@ class DatabaseHandler(context: Context) :
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         // Called when the database needs to be upgraded
     }
+
     fun addUser(user: User): Boolean {
         //Create and/or open a database that will be used for reading and writing.
         val db = this.writableDatabase
@@ -31,7 +32,8 @@ class DatabaseHandler(context: Context) :
         Log.v("InsertedID", "$_success")
         return (Integer.parseInt("$_success") != -1)
     }
-    fun getAllUsers(): String {
+
+    fun getAllUsers() {
         var allUser: String = "";
         val db = readableDatabase
         val selectALLQuery = "SELECT * FROM $TABLE_NAME"
@@ -47,3 +49,19 @@ class DatabaseHandler(context: Context) :
                 } while (cursor.moveToNext())
             }
         }
+        cursor.close()
+        db.close()
+        return User
+    }
+
+    companion object {
+        private val DB_NAME = "UsersDB"
+        private val DB_VERSIOM = 1;
+        private val TABLE_NAME = "users"
+        private val ID = "id"
+        private val FIRST_NAME = "FirstName"
+        private val LAST_NAME = "LastName"
+    }
+
+
+}
