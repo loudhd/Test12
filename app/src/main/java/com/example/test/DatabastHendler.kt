@@ -18,22 +18,22 @@ class DatabaseHandler(context: Context) :
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        // Called when the database needs to be upgraded
+
     }
 
     fun addUser(user: User): Boolean {
-        //Create and/or open a database that will be used for reading and writing.
+
         val db = this.writableDatabase
         val values = ContentValues()
-        values.put(FIRST_NAME, user.firstName)
-        values.put(LAST_NAME, user.lastName)
+        values.put(FIRST_NAME, user.fristname)
+        values.put(LAST_NAME, user.lastname)
         val _success = db.insert(TABLE_NAME, null, values)
         db.close()
         Log.v("InsertedID", "$_success")
         return (Integer.parseInt("$_success") != -1)
     }
 
-    fun getAllUsers() {
+    fun getAllUsers(): String {
         var allUser: String = "";
         val db = readableDatabase
         val selectALLQuery = "SELECT * FROM $TABLE_NAME"
@@ -51,7 +51,7 @@ class DatabaseHandler(context: Context) :
         }
         cursor.close()
         db.close()
-        return User
+        return allUser
     }
 
     companion object {
