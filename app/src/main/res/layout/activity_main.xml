@@ -7,14 +7,21 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/edittext_fristname"
+        android:id="@+id/editText_firstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="357dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
+        android:hint="Frist Name"
         android:inputType="textPersonName"
-        android:text="Name" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <EditText
         android:id="@+id/edittext_lastname"
