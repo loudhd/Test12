@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
             if (validation()){
                 val user: User = User()
                 var success: Boolean = false
-                user.fristName = editText_firstName.text.toString()
-                user.lastname = edittext_l=stName.text.toString()
+                user.fristname = editText_firstName.text.toString()
+                user.lastname = edittext_lastname.text.toString()
 
                 success = dbHandler!!.addUser(user)
 
@@ -37,5 +37,19 @@ class MainActivity : AppCompatActivity() {
             setContentView(R.layout.activity_main)
            )
         })
+    }
+    fun validation(): Boolean {
+        var validate = false
+
+        if (!editText_Name.text.toString().equals("") &&
+            !editText_Name.text.toString().equals("")
+        ) {
+            validate = true
+        } else {
+            validate = false
+            val toast = Toast.makeText(this, "Fill all details", Toast.LENGTH_LONG).show()
+        }
+
+        return validate
     }
 }
