@@ -31,3 +31,19 @@ class DatabaseHandler(context: Context) :
         Log.v("InsertedID", "$_success")
         return (Integer.parseInt("$_success") != -1)
     }
+    fun getAllUsers(): String {
+        var allUser: String = "";
+        val db = readableDatabase
+        val selectALLQuery = "SELECT * FROM $TABLE_NAME"
+        val cursor = db.rawQuery(selectALLQuery, null)
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    var id = cursor.getString(cursor.getColumnIndex(ID))
+                    var firstName = cursor.getString(cursor.getColumnIndex(FIRST_NAME))
+                    var lastName = cursor.getString(cursor.getColumnIndex(LAST_NAME))
+
+                    allUser = "$allUser\n$id $firstName $lastName"
+                } while (cursor.moveToNext())
+            }
+        }
