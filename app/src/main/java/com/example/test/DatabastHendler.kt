@@ -14,4 +14,5 @@ class DatabaseHandler(context: Context) :
                 "($ID Integer PRIMARY KEY, $FIRST_NAME TEXT, $LAST_NAME TEXT)"
         db?.execSQL(CREATE_TABLE)
         
+
     }
