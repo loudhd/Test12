@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 val user: User = User()
                 var success: Boolean = false
                 user.fristName = editText_firstName.text.toString()
-                user.lastname = edittext_lastName.text.toString()
+                user.lastname = edittext_l=stName.text.toString()
 
                 success = dbHandler!!.addUser(user)
 
@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+        })
+        button_show.setOnClickListener(View.OnClickListener {
+            var user = dbHandler!!.getAllUsers()
+            setContentView(R.layout.activity_main)
+           )
         })
     }
 }
