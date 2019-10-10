@@ -16,7 +16,7 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="@string/f_name"
+        android:hint="Frist Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="0dp"
         android:ems="10"
-        android:hint="@string/l_name"
+        android:hint="Last Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         android:layout_marginEnd="74dp"
         android:layout_marginRight="74dp"
         android:layout_marginBottom="102dp"
-        android:text="@string/save"
+        android:text="Save"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_lastName" />
 
@@ -69,7 +69,7 @@
         android:layout_marginBottom="104dp"
         android:layout_toStartOf="@+id/button_save"
         android:layout_toLeftOf="@+id/button_save"
-        android:text="@string/show"
+        android:text="Show"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_lastName" />
 
@@ -82,7 +82,7 @@
         android:layout_marginTop="136dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="319dp"
-        android:text="@string/empty"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_lastName" />
