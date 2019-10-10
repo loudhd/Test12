@@ -14,15 +14,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //init db
         dbHandler = DatabaseHandler(this)
 
+        //on Click Save button
         button_save.setOnClickListener(View.OnClickListener {
             // checking input text should not be null
             if (validation()){
                 val user: User = User()
                 var success: Boolean = false
                 user.fristname = editText_firstName.text.toString()
-                user.lastname = edittext_lastname.text.toString()
+                user.lastname = editText_lastName.text.toString()
 
                 success = dbHandler!!.addUser(user)
 
@@ -32,24 +34,27 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+
+
         button_show.setOnClickListener(View.OnClickListener {
             var user = dbHandler!!.getAllUsers()
-            setContentView(R.layout.activity_main)
-           )
+          
         })
+
     }
-    fun validation(): Boolean {
+    fun validation(): Boolean{
         var validate = false
 
-        if (!editText_Name.text.toString().equals("") &&
-            !editText_Name.text.toString().equals("")
-        ) {
+        if (!editText_firstName.text.toString().equals("") &&
+            !editText_lastName.text.toString().equals("")){
             validate = true
-        } else {
+        }else{
             validate = false
-            val toast = Toast.makeText(this, "Fill all details", Toast.LENGTH_LONG).show()
+            val toast = Toast.makeText(this,"Fill all details", Toast.LENGTH_LONG).show()
         }
 
         return validate
     }
+
 }
