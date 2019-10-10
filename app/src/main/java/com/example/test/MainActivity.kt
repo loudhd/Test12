@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.showstring.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,7 +40,8 @@ class MainActivity : AppCompatActivity() {
 
         button_show.setOnClickListener(View.OnClickListener {
             var user = dbHandler!!.getAllUsers()
-          
+            setContentView(R.layout.showstring)
+            showstring.setText(user)
         })
 
     }
